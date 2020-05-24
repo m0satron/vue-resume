@@ -1,12 +1,11 @@
 <template>
-<div class="content-area"></div>
-  
+  <div class="content-area"></div>
 </template>
 
 <script>
 export default {
-  name: 'ContentArea'
-}
+  name: "ContentArea"
+};
 </script>
 
 <style lang="scss" src="./contentArea.scss" />

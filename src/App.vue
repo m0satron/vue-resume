@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Menu />
+    <Menu title="Mosa" subTitle="Web dev" />
     <Content-area />
     <Contact />
   </div>
@@ -9,7 +9,7 @@
 <script>
 import Menu from "./components/Menu/Menu.vue";
 import ContentArea from "./components/ContentArea/ContentArea.vue";
-import Contact from "./components/Contact/Contact.vue"
+import Contact from "./components/Contact/Contact.vue";
 
 export default {
   name: "App",

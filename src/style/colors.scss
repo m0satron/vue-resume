@@ -1,0 +1,36 @@
+$greens: #22a373, #358c6c, #07bf7b;
+$blues: #133263, #364051, #3d5377, #2a4c82;
+$cyans: #486c6d, #339093, #2ea6aa, #4cc0c4;
+$browns: #a58503, #b7a043, #a58e30, #876d08;
+$oranges: #d88808, #ffa10a, #efa328, #d69631;
+
+$red: #b72305;
+$dark-red: #280a04;
+$black: #000;
+$white: #fff;
+$base: #FFFEF6;
+
+$base-colors:('red':$red, 'dark-red': $dark-red, 'black': $black, 'white': $white, 'base': $base);
+
+@mixin color-class-generator($attribute: "color", $prefix: "-") {
+  @each $color, $value in $base-colors {
+    &#{$prefix}#{$color} {
+      #{$attribute}: $value;
+    }
+  } 
+}
+@mixin bg-color-class-generator($attribute: "background-color", $prefix: "-") {
+  @each $color, $value in $base-colors {
+    &#{$prefix}#{$color} {
+      #{$attribute}: $value;
+    }
+  } 
+}
+
+
+.color {
+  @include color-class-generator;
+}
+.bg-color {
+  @include bg-color-class-generator;
+}
