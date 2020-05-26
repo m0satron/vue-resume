@@ -19,7 +19,3 @@ module.exports = {
       });
   },
 };
-
-// .use('babel-loader')
-// .loader('babel-loader')
-// .end()

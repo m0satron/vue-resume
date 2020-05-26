@@ -26,10 +26,44 @@ describe('Test suite for menu', () => {
     const wrapper = mount(Menu)
     expect(wrapper.find('.menu__tab-area').classes()).toContain('menu__tab-area--hidden')
   })
-  it('shows menu when clicking on icon', () => {  
+  it('shows menu when clicking on icon', async () => {
     const wrapper = mount(Menu)
-    const icon = wrapper.find('.menu__icon')
+    const icon = wrapper.find('.menu__menu-icon')
     icon.trigger('click')
+    await wrapper.$nextTick
     expect(wrapper.find('.menu__tab-area').classes()).not.toContain('menu__tab-area--hidden')
+  })
+  it('hides hamburger icon when clicked', async () => {
+    const wrapper = mount(Menu)
+    const icon = wrapper.find('.menu__menu-icon')
+    icon.trigger('click')
+    await wrapper.$nextTick
+    expect(wrapper.find('.menu__menu-icon')).toBeTruthy()
+  })
+  it('close icon closes menu when clicked', async () => {
+    const wrapper = mount(Menu)
+    const icon = wrapper.find('.menu__menu-icon')
+    icon.trigger('click')
+    await wrapper.$nextTick
+    expect(wrapper.find('.menu__tab-area').classes()).not.toContain('menu__tab-area--hidden')
+    const closeBtn = wrapper.find('.menu__close')
+    closeBtn.trigger('click')
+    await wrapper.$nextTick
+    expect(wrapper.find('.menu__tab-area').classes()).toContain('menu__tab-area--hidden')
+  })
+  it('emits tabItem when clicked', async () => {
+
+    const wrapper = mount(Menu, {
+      propsData: {
+        tabItems: ['About', 'Home', 'Something']
+      }
+    })
+    const icon = wrapper.find('.menu__menu-icon')
+    icon.trigger('click')
+    await wrapper.$nextTick
+    const menuItem = wrapper.find('.menu__item')
+    menuItem.trigger('click')
+    await wrapper.$nextTick
+    expect(wrapper.emitted().change).toStrictEqual([["About"]])
   })
 })

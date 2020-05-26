@@ -1,9 +1,21 @@
 :root {
   font-size: 62.5%;
   font-family: "Helvetica Neue";
+  list-style: none;
 }
 
 html,body {
  height: 100%;
  
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 200;
+  margin:0;
+}
+h2 {
+  font-size: 1.6rem;
+  font-weight: 200;
+  margin: 0;
 }
