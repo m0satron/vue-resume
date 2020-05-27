@@ -1,19 +1,26 @@
 .card {
-  border: .4rem solid black;
+  box-shadow: .2rem .2rem .1rem gray;
+  border: .3rem solid black;
   border-radius: 1rem;
-  grid-column: 1 / span 4;
+  // grid-column: 1 / span 4;
   width: 35rem;
+  min-width: 25rem;
+  margin: 1.6rem;
+
   &__title-wrapper {
     display: flex;
-
     justify-content: space-around;
-    border-bottom: .4rem solid black;
+    border-top-left-radius: .7rem;
+    border-top-right-radius: .7rem;
+    border-bottom: .3rem solid black;
+  }
+  &__content {
+    height: fit-content;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
  
   
-}
-
-.card__content {
-  display: inline-block;
-
 }

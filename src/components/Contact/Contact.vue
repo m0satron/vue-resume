@@ -1,5 +1,5 @@
 <template>
-<div class="contact bg-color-black"></div>
+<div class="contact "></div>
   
 </template>
 
