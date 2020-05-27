@@ -1,16 +1,25 @@
 .menu {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border-bottom: 4px solid black;
+  border-bottom: .4rem solid black;
 }
 
 .menu__tab-area {
   background-color: white;
   position: absolute;
+  position: absolute;
+  right: 0;
+  top: 17.5%;
+  width: 100%;
+  height: 53%;
+  opacity: 1;
   &--hidden {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
   }
+  transition: all 150ms ease;
 }
+
 .menu__image-wrapper {
   width: 8rem;
   grid-column: 1;
@@ -25,7 +34,7 @@
   flex-direction: column;
   align-items: flex-start;
   align-self: flex-end;
-  margin: 0 0 2rem;
+  margin: 0 0 4rem 2rem;
 }
 .menu__image {
   width: 100%;
@@ -44,10 +53,12 @@
   width: 4rem;
 }
 
-.menu__tab-area {
-  position: absolute;
-  right: 0;
-  top: 17.5%;
-  width: 100%;
-  height: 53%;
+
+.menu__item {
+  font-size: 2rem;
+  margin: 2rem;
+
+  &--active {
+    font-weight: bold;
+  }
 }

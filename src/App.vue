@@ -9,7 +9,7 @@
       v-on:change="selectTab"
       v-model="selected"
     />
-    <Content-area>{{ selected }}</Content-area>
+    <Content-area> <card title="Design System" titleBackground="red" :list="['Vue', 'Jest', 'SCSS', 'React']" description="I used to work with this n that and then I achieved a lot. " /> </Content-area>
     <Contact />
   </div>
 </template>
@@ -17,6 +17,7 @@
 <script>
 import Menu from "./components/Menu/Menu.vue";
 import ContentArea from "./components/ContentArea/ContentArea.vue";
+import Card from "./components/Card/Card.vue"
 import Contact from "./components/Contact/Contact.vue";
 import selfie from '@/assets/selfie.jpg'
 
@@ -25,6 +26,7 @@ export default {
   components: {
     Menu,
     ContentArea,
+    Card,
     Contact
   },
   data() {

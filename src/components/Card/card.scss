@@ -1,0 +1,19 @@
+.card {
+  border: .4rem solid black;
+  border-radius: 1rem;
+  grid-column: 1 / span 4;
+  width: 35rem;
+  &__title-wrapper {
+    display: flex;
+
+    justify-content: space-around;
+    border-bottom: .4rem solid black;
+  }
+ 
+  
+}
+
+.card__content {
+  display: inline-block;
+
+}
