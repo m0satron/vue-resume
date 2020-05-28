@@ -2,9 +2,9 @@
   <div id="app" class="bg-color-base">
     <Menu
       :imgSrc="selfie"
-      imgAlt="me"
-      title="Mosa"
-      subTitle="Web dev"
+      imgAlt="portrait photo of Mosa"
+      title="Mosa M.Sebdani"
+      subTitle="Web developer"
       :tabItems="tabItems"
       v-on:change="selectTab"
       v-model="selected"
@@ -13,26 +13,26 @@
       <card
         title="Design System"
         titleBackground="red"
-        :list="['Vue', 'Jest', 'SCSS', 'React']"
-        description="I used to work with this n that and then I achieved a lot. "
+        :list="['Vue', 'Jest', 'SCSS', 'React', 'JavaScript', 'Node']"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       />
       <card
-        title="Design System"
+        title="devOps"
         titleBackground="red"
-        :list="['Vue', 'Jest', 'SCSS', 'React']"
-        description="I used to work with this n that and then I achieved a lot. "
+        :list="['Jenkins', 'K8S', 'Docker', 'Something else']"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       />
       <card
-        title="Design System"
+        title="Art"
         titleBackground="red"
-        :list="['Vue', 'Jest', 'SCSS', 'React']"
-        description="I used to work with this n that and then I achieved a lot. "
+        :list="['Blender', 'Sculpting', 'Photography', 'Sonology']"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       />
       <card
-        title="Design System"
+        title="Other"
         titleBackground="red"
-        :list="['Vue', 'Jest', 'SCSS', 'React']"
-        description="I used to work with this n that and then I achieved a lot. "
+        :list="['Python', 'maxMSP', 'SuperCollider', 'Some more stuff']"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       />
     </Content-area>
     <Contact />

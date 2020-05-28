@@ -1,11 +1,12 @@
 # vue-resume
 
-*This is a work in progress vue version of my resume.\s\s
-*The intention is to show that I can write code.\s\s
-*It is designed with reusability and accessibility in mind\s\s
-*I will add a backend to this in the future, so basically all data will be received in app.vue and passed as props to the child components\s\s
+* This is a work in progress vue version of my resume.  
+* I am styling it mobile first, at the time of writing, the tablet and desktop layouts are not done  
+* The intention is to show that I can write code.  
+* It is designed with reusability and accessibility in mind  
+* I will add a backend to this in the future, so basically all data will be received in app.vue and passed as props to the child components  
 
-*Since the project is in its start, there are some empty areas, if you want to look at my code standard you can look inside: src/components/Menu, src/components/Card and src/App and src/style\s\s
+* Since the project is in its start, there are some empty areas, if you want to look at my code standard you can look inside: src/components/Menu, src/components/Card and src/App and src/style  
 
 ## Project setup
 ```
