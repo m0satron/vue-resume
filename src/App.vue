@@ -35,7 +35,7 @@
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       />
     </Content-area>
-    <Contact />
+    <Contact phone="0720479118" />
   </div>
 </template>
 

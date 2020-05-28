@@ -15,12 +15,13 @@ describe('test suite for Card', () => {
     expect(foundTitle).toEqual(wrapper.vm.$props['title'])
   })
   it('can have a list', () => {
-    const list = "[Jest, Vue]"
+    const list = ['Jest', 'Vue']
     const wrapper = shallowMount(Card, { 
       propsData: { list }
     })
-    const foundList = wrapper.find('.card__list').text()
-    expect(foundList).toEqual(wrapper.vm.props['list'])
+    const foundList = wrapper.findAll('.card__list')
+    const textContents = foundList.wrappers.map( item => item.text())
+    expect(textContents).toEqual(wrapper.vm.$props['list'])
   })
   it('has description', () => {
     const description = 'this is description'

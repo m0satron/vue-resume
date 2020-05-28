@@ -12,7 +12,7 @@ second to first or second to last should then be selected.
 
 const getIndex = key => {
   const currentIndex = this.options.findIndex(this.activeOption)
-  let currentIndex
+  let newIndex
   if (key === 'up') newIndex = currentIndex + 1
   if (key === 'down') newIndex = currentIndex -1
   return newIndex
