@@ -7,6 +7,7 @@ for select menus.
 - disabled items at the beginning or end of list should not be selected, rather the
 second to first or second to last should then be selected.
 - if for example to items at the end of the list are disabled, then the third to last item should be the nearest available
+- etc
 */
 
 const getIndex = key => {

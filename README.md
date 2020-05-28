@@ -1,5 +1,12 @@
 # vue-resume
 
+-This is a work in progress vue version of my resume.
+-The intention is to show that I can write code.
+-It is designed with reusability and accessibility in mind
+-I will add a backend to this in the future, so basically all data will be received in app.vue and passed as props to the child components
+
+-Since the project is in it's start, there are some empty areas, if you want to look at my code standard you can look inside: src/components/Menu, src/components/Card and src/App and src/style
+
 ## Project setup
 ```
 npm install
