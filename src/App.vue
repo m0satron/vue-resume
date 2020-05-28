@@ -58,7 +58,7 @@ export default {
     return {
       selfie,
       tabItems: ["About", "Homes", "Whatever"],
-      selected: "hej"
+      selected: ''
     };
   },
   methods: {

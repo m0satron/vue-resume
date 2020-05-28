@@ -16,7 +16,7 @@
       class="menu__menu-icon icon"
     />
     <close
-      ref="closeButton"
+      ref="close"
       v-if="!menuHidden"
       @click="toggleMenu"
       @keydown.enter="toggleMenu"
@@ -28,7 +28,7 @@
         v-for="(tab, index) in tabItems"
         :key="tab"
         tabindex="0"
-        @keydown.tab="backToPage(index)"
+        @keyup.tab="backToPage(index)"
         @click="select(tab)"
         class="menu__item"
         :class="tab === activeTab ? 'menu__item--active' : '' "
@@ -69,8 +69,10 @@ export default {
       this.menuHidden = true
     },
     backToPage(index) {
-      if(index !== this.tabItems.length -1) return
-
+      /*fix this to put focus on closebutton when reaching the end of the tabitems!
+      instead of v-if perhaps it's better to use classes to toggle visibility
+      */
+      if(index !== this.tabItems.length -1) console.log(this.$refs)
     }
   }
 };
