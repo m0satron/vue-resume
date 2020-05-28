@@ -2,7 +2,7 @@ $tablet: 600px;
 $laptop: 1080px;
 $desktop: 1280px;
 
-$mq-tablet: 'screen and (min-width:' + $tablet + ')';
+$mq-tablet: 'screen and (min-width:' #{$tablet}')';
 $mq-laptop: 'screen and (min-width: #{$laptop})';
 $mq-desktop: 'screen and (min-width: #{$desktop})';
 
