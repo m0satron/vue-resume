@@ -35,7 +35,7 @@
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       />
     </Content-area>
-    <Contact phone="0720479118" />
+    <Contact phone="0720479118" mail="abcd@gmail.com" gitHub="m0satron" />
   </div>
 </template>
 
@@ -58,7 +58,7 @@ export default {
     return {
       selfie,
       tabItems: ["About", "Homes", "Whatever"],
-      selected: ''
+      selected: ""
     };
   },
   methods: {
