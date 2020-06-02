@@ -5,7 +5,9 @@
     </div>
     <div class="card__content">
       <div class="card__list-wrapper">
-        <li v-for="(item, index) in list" :key="index" class="card__list">{{ item }}</li>
+        <li v-for="(item, index) in list" :key="index" class="card__list">
+          {{ item }}
+        </li>
       </div>
       <p class="card__description">{{ description }}</p>
     </div>

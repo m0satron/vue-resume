@@ -2,22 +2,22 @@
   <div class="contact">
     <span>
       <a :href="`tel:${phone}`" class="contact__phone">
-        <Phone  :title="phone" class="contact__icon" />
+        <Phone :title="phone" class="contact__icon" />
       </a>
     </span>
     <span>
       <a :href="`mailto:${mail}`" class="contact__mail">
-        <Email :title="mail" class="contact__icon"/>
+        <Email :title="mail" class="contact__icon" />
       </a>
     </span>
     <span>
       <a :href="`https://github.com/${gitHub}`" class="contact__github">
-        <Github :title="github" class="contact__icon"/>
+        <Github :title="gitHub" class="contact__icon" />
       </a>
     </span>
     <span>
       <a :href="`https://linkedin.com/${linkedIn}`" class="contact__linkedin">
-        <Linkedin :title="linkedin" class="contact__icon"/>
+        <Linkedin :title="linkedIn" class="contact__icon" />
       </a>
     </span>
   </div>
@@ -31,6 +31,7 @@ import Linkedin from "vue-material-design-icons/Linkedin.vue";
 
 export default {
   name: "Contact",
+
   components: {
     Phone,
     Email,
@@ -46,4 +47,4 @@ export default {
 };
 </script>
 
-<style lang="scss" src="./contact.scss" /> 
+<style lang="scss" src="./contact.scss" />

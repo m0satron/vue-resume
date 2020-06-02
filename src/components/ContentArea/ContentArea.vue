@@ -1,6 +1,5 @@
 <template>
   <div class="content-area"><slot /></div>
-  
 </template>
 
 <script>

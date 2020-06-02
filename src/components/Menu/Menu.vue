@@ -23,7 +23,10 @@
       tabindex="0"
       class="menu__close icon"
     />
-    <ul class="menu__tab-area" :class="menuHidden ? 'menu__tab-area--hidden' : ''">
+    <ul
+      class="menu__tab-area"
+      :class="menuHidden ? 'menu__tab-area--hidden' : ''"
+    >
       <li
         v-for="(tab, index) in tabItems"
         :key="tab"
@@ -31,8 +34,10 @@
         @keyup.tab="backToPage(index)"
         @click="select(tab)"
         class="menu__item"
-        :class="tab === activeTab ? 'menu__item--active' : '' "
-      >{{ tab }}</li>
+        :class="tab === activeTab ? 'menu__item--active' : ''"
+      >
+        {{ tab }}
+      </li>
     </ul>
   </div>
 </template>
@@ -56,7 +61,7 @@ export default {
   data() {
     return {
       menuHidden: true,
-      activeTab: ''
+      activeTab: ""
     };
   },
   methods: {
@@ -64,15 +69,15 @@ export default {
       this.menuHidden = !this.menuHidden;
     },
     select(value) {
-      this.$emit("change", value)
-      this.activeTab = value
-      this.menuHidden = true
+      this.$emit("change", value);
+      this.activeTab = value;
+      this.menuHidden = true;
     },
     backToPage(index) {
       /*fix this to put focus on closebutton when reaching the end of the tabitems!
       instead of v-if perhaps it's better to use classes to toggle visibility
       */
-      if(index !== this.tabItems.length -1) console.log(this.$refs)
+      if (index !== this.tabItems.length - 1) console.log(this.$refs);
     }
   }
 };

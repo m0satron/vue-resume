@@ -11,60 +11,64 @@ second to first or second to last should then be selected.
 */
 
 const getIndex = key => {
-  const currentIndex = this.options.findIndex(this.activeOption)
-  let newIndex
-  if (key === 'up') newIndex = currentIndex + 1
-  if (key === 'down') newIndex = currentIndex -1
-  return newIndex
-}
+  const currentIndex = this.options.findIndex(this.activeOption);
+  let newIndex;
+  if (key === "up") newIndex = currentIndex + 1;
+  if (key === "down") newIndex = currentIndex - 1;
+  return newIndex;
+};
 
 const handleKeyUp = () => {
-  let availableOption
-  const index = getIndex() - 1
-  for(let i = index; i >= 0; i-- ){
-    if(!this.options[i].disabled) {
-      availableOption = i
-      break
+  let availableOption;
+  const index = getIndex() - 1;
+  for (let i = index; i >= 0; i--) {
+    if (!this.options[i].disabled) {
+      availableOption = i;
+      break;
     }
   }
-  return availableOption
-}
+  return availableOption;
+};
 
 const handleKeyDown = () => {
-  let availableOption
-  const index = getIndex() + 1
-  for(let i = index; i <= this.options.length-1; i++) {
-    if(!this.options.disabled) {
-      availableOption = i
-      break
+  let availableOption;
+  const index = getIndex() + 1;
+  for (let i = index; i <= this.options.length - 1; i++) {
+    if (!this.options.disabled) {
+      availableOption = i;
+      break;
     }
   }
-}
+};
 
 const moveTo = key => {
-  if (key === 'home') {
-    const index = this.options.findIndex(option => !option.disabled)
-    return (this.activeOption = this.options[index])
+  if (key === "home") {
+    const index = this.options.findIndex(option => !option.disabled);
+    return (this.activeOption = this.options[index]);
   }
-  if (key === 'end') {
+  if (key === "end") {
     const index =
-      (this.options.length - 1) - this.options.slice().reverse().findIndex(option => !option.disabled)
-    return (this.activeOption = this.options[index])
+      this.options.length -
+      1 -
+      this.options
+        .slice()
+        .reverse()
+        .findIndex(option => !option.disabled);
+    return (this.activeOption = this.options[index]);
   }
-  const selectedOption = this.options[getIndex(key)]
+  const selectedOption = this.options[getIndex(key)];
 
-  if(!selectedOption.disabled) return (this.activeOption = selectedOption)
-  if(selectedOption.disabled) {
-    let nearestAvailable
-    if(key === 'up') {
-      nearestAvailable = handleKeyUp()
+  if (!selectedOption.disabled) return (this.activeOption = selectedOption);
+  if (selectedOption.disabled) {
+    let nearestAvailable;
+    if (key === "up") {
+      nearestAvailable = handleKeyUp();
     }
-    if(key === 'down') {
-      nearestAvailable = handleKeyDown()
+    if (key === "down") {
+      nearestAvailable = handleKeyDown();
     }
-    if(nearestAvailable) this.activeOption = nearestAvailable
+    if (nearestAvailable) this.activeOption = nearestAvailable;
   }
+};
 
-}
-
-export default { getIndex, handleKeyUp, handleKeyDown, moveTo  }
+export default { getIndex, handleKeyUp, handleKeyDown, moveTo };

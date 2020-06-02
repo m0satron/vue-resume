@@ -3,9 +3,7 @@ import { shallowMount } from "@vue/test-utils";
 
 //write tests for app
 describe.skip("App.vue", () => {
-
   it("renders", () => {
-  
-  expect(true).toBe(true)
+    expect(true).toBe(true);
   });
 });
