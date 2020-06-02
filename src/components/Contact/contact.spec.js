@@ -16,7 +16,7 @@ describe('test suite for contact field', () => {
     })
     const foundPhoneNumber = wrapper.find('.contact__phone')
     expect(foundPhoneNumber.attributes().href).toBe(`tel:${phone}`)
-    expect(foundPhoneNumber.text()).toBe(`${phone}`)
+
 
   })
   it('has an email', () => {
@@ -28,7 +28,7 @@ describe('test suite for contact field', () => {
     })
     const foundMail = wrapper.find('.contact__mail')
     expect(foundMail.attributes().href).toBe(`mailto:${mail}`)
-    expect(foundMail.text()).toBe(`${mail}`)
+
 
   })
   it('has a github account', () => {
@@ -40,7 +40,7 @@ describe('test suite for contact field', () => {
     })
     const foundGitHub = wrapper.find('.contact__github')
     expect(foundGitHub.attributes().href).toBe(`https://github.com/${gitHub}`)
-    expect(foundGitHub.text()).toBe(`${gitHub}`)
+
 
   })
   it('has a linkedIn account', () => {
@@ -52,7 +52,6 @@ describe('test suite for contact field', () => {
     })
     const foundlinkedIn = wrapper.find('.contact__linkedin')
     expect(foundlinkedIn.attributes().href).toBe(`https://linkedin.com/${linkedIn}`)
-    expect(foundlinkedIn.text()).toBe(`${linkedIn}`)
 
   })
 } )

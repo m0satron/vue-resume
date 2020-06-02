@@ -1,0 +1,20 @@
+.contact {
+  display: flex;
+  justify-content: space-evenly;
+
+
+  background-color: white;
+  border-top: .4rem solid black;
+  box-shadow: 0 -1rem  2rem white;
+  z-index: 1;
+  &__icon {
+    color:black;
+
+  }
+}
+
+.material-design-icon > .material-design-icon__svg {
+  margin-top: 2rem;
+  height: 6rem;
+  width: 6rem;
+}
