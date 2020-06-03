@@ -5,12 +5,11 @@
   background-color: colors.$base, 0.1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-bottom: .4rem solid black;
+  border-bottom: 0.4rem solid black;
   @include breakpoints.tablet {
     grid-template-rows: 2fr 1fr;
     border: none;
   }
-
 }
 
 .menu__tab-area {
@@ -28,12 +27,30 @@
   transition: all 150ms ease;
   @include breakpoints.tablet {
     position: relative;
-    grid-column: 1 /span 3;
+    grid-column: 1 / span 3;
     grid-row: 2;
     display: flex;
     justify-content: space-evenly;
     background-color: transparent;
-    border-top: .4rem solid black;
+    border-bottom: 0.4rem solid black;
+  }
+}
+.menu__item {
+  font-size: 3rem;
+
+  margin: 4rem 2rem 2rem 4rem;
+
+  &--active {
+    font-weight: bold;
+  }
+  @include breakpoints.tablet {
+    margin: 0;
+    padding: 1rem 2rem;
+    &--active {
+      color: white;
+      background-color: black;
+      outline: none;
+    }
   }
 }
 
@@ -46,7 +63,6 @@
   margin-bottom: 2rem;
   @include breakpoints.tablet {
     margin-left: 2rem;
-
   }
 }
 .menu__title-wrapper {
@@ -72,18 +88,4 @@
 .material-design-icon > .material-design-icon__svg {
   height: 4rem;
   width: 4rem;
-}
-
-
-.menu__item {
-  font-size: 3rem;
-  margin: 4rem 2rem 2rem 4rem;
-
-  &--active {
-    font-weight: bold;
-  }
-  @include breakpoints.tablet {
-    margin: 0 0 4rem 0;
-
-  }
 }
