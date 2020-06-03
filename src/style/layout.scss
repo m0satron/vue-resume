@@ -1,11 +1,11 @@
 @use './breakpoints.scss';
 
 #app {
-  @include breakpoints.screen-tablet {
+  @include breakpoints.tablet {
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: 1fr 3fr 0.8fr;
   }
-  @include breakpoints.screen-laptop {
+  @include breakpoints.laptop {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 1fr 3fr 1.6fr;
   }
@@ -15,16 +15,16 @@
   
   display: grid;
   grid-template-columns: 0.1fr repeat(4, 1fr) 0.1fr;
-  grid-template-rows: 1fr 3.6fr 1fr;
+  grid-template-rows: .8fr 3.6fr .2fr;
 }
 
 .menu {
   grid-column: 2 / span 4;
   grid-row: 1;
-  @include breakpoints.screen-tablet {
+  @include breakpoints.tablet {
     grid-column: 1 / span 8;
   }
-  @include breakpoints.screen-laptop {
+  @include breakpoints.laptop {
     grid-column: 3 / span 12;
   }
 }
@@ -32,10 +32,10 @@
 .content-area {
   grid-column: 2 / span 4;
   grid-row: 2;
-  @include breakpoints.screen-tablet {
+  @include breakpoints.tablet {
     grid-column: 1 / span 8;
   }
-  @include breakpoints.screen-laptop {
+  @include breakpoints.laptop {
     grid-column: 3 / span 12;
     grid-row: 2 / span 4;
   }
@@ -44,10 +44,10 @@
 .contact {
   grid-column: 2 / span 4;
   grid-row: 3;
-  @include breakpoints.screen-tablet {
+  @include breakpoints.tablet {
     grid-column: 1 / span 8;
   }
-  @include breakpoints.screen-laptop {
+  @include breakpoints.laptop {
     grid-column: 1 / span 2;
     grid-row: 1 / span 3;
   }

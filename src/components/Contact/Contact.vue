@@ -28,6 +28,7 @@ import Phone from "vue-material-design-icons/Phone.vue";
 import Email from "vue-material-design-icons/EmailOutline.vue";
 import Github from "vue-material-design-icons/Github.vue";
 import Linkedin from "vue-material-design-icons/Linkedin.vue";
+import { validateEmail, validatePhone } from "../../functions/validators.js";
 
 export default {
   name: "Contact",
@@ -38,9 +39,16 @@ export default {
     Github,
     Linkedin
   },
+  
   props: {
-    phone: String,
-    mail: String,
+    phone: {
+      type: String,
+      validator: validatePhone
+    },
+    mail: {
+      type: String,
+      validator: validateEmail
+    },
     gitHub: String,
     linkedIn: String
   }

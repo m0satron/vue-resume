@@ -1,7 +1,15 @@
+@use "../../style/breakpoints.scss";
+@use "../../style/colors.scss";
+
 .menu {
+  background-color: colors.$base, 0.1;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   border-bottom: .4rem solid black;
+  @include breakpoints.tablet {
+    grid-template-rows: 2fr 1fr;
+    border: none;
+  }
 
 }
 
@@ -18,6 +26,15 @@
     visibility: hidden;
   }
   transition: all 150ms ease;
+  @include breakpoints.tablet {
+    position: relative;
+    grid-column: 1 /span 3;
+    grid-row: 2;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: transparent;
+    border-top: .4rem solid black;
+  }
 }
 
 .menu__image-wrapper {
@@ -27,6 +44,10 @@
   flex-direction: column;
   align-self: flex-end;
   margin-bottom: 2rem;
+  @include breakpoints.tablet {
+    margin-left: 2rem;
+
+  }
 }
 .menu__title-wrapper {
   grid-column: 2;
@@ -34,7 +55,7 @@
   flex-direction: column;
   align-items: flex-start;
   align-self: flex-end;
-  margin: 0 0 4rem 2rem;
+  margin: 0 0 2.7rem 0;
 }
 .menu__image {
   width: 100%;
@@ -42,7 +63,7 @@
 }
 
 .icon {
-  grid-column: 4;
+  grid-column: 3;
 
   display: flex;
   justify-self: right;
@@ -60,5 +81,9 @@
 
   &--active {
     font-weight: bold;
+  }
+  @include breakpoints.tablet {
+    margin: 0 0 4rem 0;
+
   }
 }

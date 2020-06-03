@@ -6,19 +6,19 @@ $mq-tablet: 'screen and (min-width: #{$tablet})';
 $mq-laptop: 'screen and (min-width: #{$laptop})';
 $mq-desktop: 'screen and (min-width: #{$desktop})';
 
-@mixin screen-tablet {
+@mixin tablet {
   @media #{$mq-tablet} {
     @content
   }
 };
 
-@mixin screen-laptop {
+@mixin laptop {
   @media #{$mq-laptop} {
     @content
   }
 };
 
-@mixin screen-desktop {
+@mixin desktop {
   @media #{$mq-desktop} {
     @content
   }
