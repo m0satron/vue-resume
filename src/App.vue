@@ -10,29 +10,12 @@
       v-model="selected"
     />
     <Content-area>
-      <card
-        title="Design System"
+      <Card
+        v-for="(item, index) in pageContent[selected]" :key="index"
         titleBackground="red"
-        :list="['Vue', 'Jest', 'SCSS', 'React', 'JavaScript', 'Node']"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      />
-      <card
-        title="devOps"
-        titleBackground="red"
-        :list="['Jenkins', 'K8S', 'Docker', 'Something else']"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      />
-      <card
-        title="Art"
-        titleBackground="red"
-        :list="['Blender', 'Sculpting', 'Photography', 'Sonology']"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      />
-      <card
-        title="Other"
-        titleBackground="red"
-        :list="['Python', 'maxMSP', 'SuperCollider', 'Some more stuff']"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        :title="item.title"
+        :list="item.list"
+        :description="item.description"
       />
     </Content-area>
     <Contact phone="0720479118" mail="abcd@gmail.com" gitHub="m0satron" />
@@ -57,14 +40,69 @@ export default {
   data() {
     return {
       selfie,
-      tabItems: ["About", "Homes", "Whatever"],
-      selected: ""
+      tabItems: "",
+      selected: "",
+      pageContent: {
+        skills: [
+         {
+            title: "Design System",
+            list: [
+              "JavaScript",
+              "Node",
+              "Vue",
+              "React",
+              "SCSS",
+              "CSS",
+              "HTML"
+            ],
+            description:
+              "The main tools we've used for developing the Design System. We worked with tdd and used Storybook for documentation"
+          },
+          {
+            title: "devOps",
+            list: ["Jest", "CI/CD", "Docker", "K8S"],
+            description: "To maintain a healthy agile development lifecycle for our Design System, which is used by all frontend, teams, it has been important to put a lot of love into the delivery process"
+          }
+        ],
+        education: [
+          {
+            title: "Sonology / ArtScience",
+            list: [
+              "Royal Academy of Art, Den Haag",
+              "Royal Conservatory, Den Haag",
+              "2014-2017"
+            ],
+            description: "A combined fine art and music education at the Interfaculty"
+
+          },
+          {
+            title: "Visual Arts",
+            list: ["Oslo National Academy of the Arts", "2013-2014"],
+            description: "Visual Arts & Crafts with focus on ceramic art in Oslo"
+          }
+        ],
+        jobs: [
+          {
+            title: "Telia",
+            description: "At Telia I used to work as one of the core team members for developing their swedish Design System"
+          }
+        ]
+
+        
+      }
     };
   },
   methods: {
     selectTab(clicked) {
       this.selected = clicked;
+    },
+    getTabs() {
+      this.tabItems = Object.keys(this.pageContent)
+
     }
+  },
+  beforeMount() {
+    this.getTabs();
   }
 };
 </script>

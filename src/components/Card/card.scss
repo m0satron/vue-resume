@@ -5,7 +5,10 @@
   // grid-column: 1 / span 4;
   width: 35rem;
   min-width: 25rem;
+  min-height: 30rem;
+  max-height: 35rem;
   margin: 1.6rem;
+  align-self: center;
 
   &__title-wrapper {
     display: flex;

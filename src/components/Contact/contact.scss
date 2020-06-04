@@ -1,21 +1,26 @@
+@use "../../style/breakpoints.scss";
+
 .contact {
   display: flex;
   justify-content: space-evenly;
-
-
-  // background-color: white;
   border-top: .4rem solid black;
-  // box-shadow: 0 -1rem  2rem black;
-
   z-index: 1;
   &__icon {
     color:black;
-
   }
+  @include breakpoints.laptop {
+    flex-direction: column;
+    border: none;
+    border-right: .4rem solid black;
+    align-items: center;
+    background-color: white;
+   
+  }
+
 }
 
 .material-design-icon > .material-design-icon__svg {
-  margin-top: 2rem;
+  margin: 1rem 0;
   height: 6rem;
   width: 6rem;
 }

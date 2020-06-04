@@ -1,15 +1,17 @@
 <template>
   <div class="menu">
-    <div class="menu__image-wrapper" v-if="imgSrc && imgAlt">
-      <img class="menu__image" :src="imgSrc" :alt="imgAlt" />
-    </div>
-    <div class="menu__title-wrapper">
-      <h1 tabindex="0" class="menu__title">{{ title }}</h1>
-      <h2 tabindex="0" class="menu__subtitle">{{ subTitle }}</h2>
+    <div class="menu__header">
+      <div class="menu__image-wrapper" v-if="imgSrc && imgAlt">
+        <img class="menu__image" :src="imgSrc" :alt="imgAlt" />
+      </div>
+      <div class="menu__title-wrapper">
+        <h1 tabindex="0" class="menu__title">{{ title }}</h1>
+        <h2 tabindex="0" class="menu__subtitle">{{ subTitle }}</h2>
+      </div>
     </div>
 
     <Menu-icon
-      v-if="menuHidden && windowWidth < 600"
+      v-if="menuHidden && windowWidth < 1080"
       @click="toggleMenu"
       @keydown.enter="toggleMenu"
       tabindex="0"
@@ -17,7 +19,7 @@
     />
     <Close
       ref="close"
-      v-if="!menuHidden && windowWidth < 600"
+      v-if="!menuHidden && windowWidth < 1080"
       @click="toggleMenu"
       @keydown.enter="toggleMenu"
       tabindex="0"
@@ -62,14 +64,14 @@ export default {
   },
   methods: {
     toggleMenu() {
-      if (this.windowWidth < 600) {
+      if (this.windowWidth < 1080) {
         this.menuHidden = !this.menuHidden;
       }
     },
     select(value) {
       this.$emit("change", value);
       this.activeTab = value;
-      if(this.windowWidth < 600 )this.menuHidden = true;
+      if (this.windowWidth < 1080) this.menuHidden = true;
     },
     backToPage(index) {
       /*fix this to put focus on closebutton when reaching the end of the tabitems!
@@ -89,8 +91,8 @@ export default {
   },
   watch: {
     windowWidth: function() {
-      if (this.windowWidth <= 600) this.menuHidden = true;
-      if (this.windowWidth > 600) this.menuHidden = false;
+      if (this.windowWidth <= 1080) this.menuHidden = true;
+      if (this.windowWidth > 1080) this.menuHidden = false;
     }
   }
 };

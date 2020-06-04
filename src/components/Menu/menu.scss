@@ -3,12 +3,17 @@
 
 .menu {
   background-color: colors.$base, 0.1;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: space-between;
+  // grid-template-columns: repeat(3, 1fr);
   border-bottom: 0.4rem solid black;
   @include breakpoints.tablet {
-    grid-template-rows: 2fr 1fr;
+    margin: 0 2rem;
+  }
+  @include breakpoints.laptop {
+    // grid-template-rows: 1fr 1fr;
     border: none;
+    flex-direction: column;
   }
 }
 
@@ -26,9 +31,13 @@
   }
   transition: all 150ms ease;
   @include breakpoints.tablet {
+    top: 20%;
+  }
+  @include breakpoints.laptop {
     position: relative;
-    grid-column: 1 / span 3;
-    grid-row: 2;
+    top: 0;
+    // grid-column: 1 / span 3;
+    // grid-row: 2;
     display: flex;
     justify-content: space-evenly;
     background-color: transparent;
@@ -43,7 +52,8 @@
   &--active {
     font-weight: bold;
   }
-  @include breakpoints.tablet {
+  @include breakpoints.laptop {
+    font-size: 2rem;
     margin: 0;
     padding: 1rem 2rem;
     &--active {
@@ -54,17 +64,31 @@
   }
 }
 
+.menu__header {
+  display: flex;
+}
 .menu__image-wrapper {
   width: 8rem;
-  grid-column: 1;
+  // grid-column: 1;
   display: flex;
   flex-direction: column;
   align-self: flex-end;
-  margin-bottom: 2rem;
+  margin: 2rem 2rem 2rem 2rem;
   @include breakpoints.tablet {
-    margin-left: 2rem;
+    width: 10rem;
+  }
+  @include breakpoints.laptop {
+    margin: 0;
+    flex-direction: row;
+    justify-self: center;
+    align-self: flex-end;
   }
 }
+.menu__image {
+  width: 100%;
+  border-radius: 25%;
+}
+
 .menu__title-wrapper {
   grid-column: 2;
   display: flex;
@@ -72,11 +96,16 @@
   align-items: flex-start;
   align-self: flex-end;
   margin: 0 0 2.7rem 0;
+  @include breakpoints.tablet {
+    h1 {
+      font-size: 3rem;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+  }
 }
-.menu__image {
-  width: 100%;
-  border-radius: 25%;
-}
+
 
 .icon {
   grid-column: 3;

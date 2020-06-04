@@ -1,6 +1,6 @@
 <template>
   <div class="contact">
-    <span>
+    <span class="contact__item">
       <a :href="`tel:${phone}`" class="contact__phone">
         <Phone :title="phone" class="contact__icon" />
       </a>
